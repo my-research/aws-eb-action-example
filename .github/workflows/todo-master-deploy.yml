@@ -53,4 +53,4 @@ jobs:
           environment_name: Todoapplicationprod-env
           version_label: todo-application-prod-label-${{steps.current-time.outputs.formattedTime}}-${{github.sha}}
           region: ap-northeast-2
-          deployment_package: deploy-todo-app/todo-application-prod-label-${{steps.current-time.outputs.formattedTime}}-${{github.sha}}
+          deployment_package: deploy/todo-application-prod-label-${{steps.current-time.outputs.formattedTime}}-${{github.sha}}.zip
