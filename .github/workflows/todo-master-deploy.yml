@@ -23,8 +23,12 @@ jobs:
         run: chmod +x ./server-app/gradlew # (6)
         shell: bash
 
+      - name: print working-directory
+        run: ls -al
+        shell: bash
+
       - name: Build with Gradle
-        run: /server-app/gradlew clean build # (7)
+        run: ./server-app/gradlew clean build # (7)
         shell: bash
 
       - name: Deploy Consumer to EB
