@@ -28,3 +28,4 @@
 3. EB 생성
 4. IAM 생성
 5. Github Action 생성
+6. 코드 푸시 후 Github Actions 동작 확인
