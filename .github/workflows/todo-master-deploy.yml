@@ -39,7 +39,7 @@ jobs:
       - name: Generate deployment package
         run: |
           mkdir -p deploy
-          cp server-app/build/libs/*.jar deploy/todo-application-prod-ebextensions-1.jar
+          cp server-app/build/libs/server-app.jar deploy/todo-application-prod-ebextensions-1.jar
           cp Procfile deploy/Procfile
           cp -r .ebextensions deploy/.ebextensions
           cd deploy && zip -r todo-application-prod-label-${{steps.current-time.outputs.formattedTime}}-${{github.sha}} .
