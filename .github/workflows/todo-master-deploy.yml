@@ -24,7 +24,7 @@ jobs:
         shell: bash
 
       - name: Build with Gradle
-        run: ./gradlew clean build # (7)
+        run: ./server-app/gradlew clean build # (7)
         shell: bash
 
       - name: Deploy Consumer to EB
