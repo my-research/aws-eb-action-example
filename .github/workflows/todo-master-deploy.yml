@@ -28,7 +28,12 @@ jobs:
         working-directory: ./server-app
         run: ./gradlew clean build # (7)
         shell: bash
-
+      - name: Get current time
+        uses: 1466587594/get-current-time@v2
+        id: current-time
+        with:
+          format: YYYY-MM-DDTHH-mm-ss # (1)
+          utcOffset: "+09:00"
       - name: Deploy Consumer to EB
         uses: einaregilsson/beanstalk-deploy@v14
         with:
