@@ -36,13 +36,21 @@ jobs:
           format: YYYYMMDDTHHmm
           utcOffset: "+09:00"
 
+      - name: Generate deployment package
+        run: |
+          mkdir -p deploy
+          cp build/libs/*.jar deploy/todo-application-prod.jar
+          cp Procfile deploy/Procfile
+          cp -r .ebextensions deploy/.ebextensions
+          cd deploy && zip -r todo-application-prod-label-${{steps.current-time.outputs.formattedTime}}-${{github.sha}} .
+
       - name: Deploy Consumer to EB
         uses: einaregilsson/beanstalk-deploy@v14
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: todo-application-prod
-          environment_name: Todoapplicationprod-envs
+          environment_name: Todoapplicationprod-env
           version_label: todo-application-prod-label-${{steps.current-time.outputs.formattedTime}}-${{github.sha}}
           region: ap-northeast-2
           deployment_package: deploy-todo-app/todo-application-prod-label-${{steps.current-time.outputs.formattedTime}}-${{github.sha}}
