@@ -8,6 +8,7 @@
 
 - Elastic Beanstalk 를 사용하여 서버 리소스를 관리한다.
 - Github Action 을 이용하여 자동 배포를 달성한다.
+- m1 브랜치에서 master 브랜치로 merge 될 때 자동 배포된다.
 
 ## 기술 및 방법
 
