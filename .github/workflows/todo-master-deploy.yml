@@ -40,7 +40,7 @@ jobs:
         working-directory: ./server-app
         run: |
           mkdir -p deploy
-          cp build/libs/*.jar deploy/todo-application-prod.jar
+          cp build/libs/*.jar deploy/todo-application-prod-ebextensions-1.jar
           cp Procfile deploy/Procfile
           cp -r .ebextensions deploy/.ebextensions
           cd deploy && zip -r todo-application-prod-label-${{steps.current-time.outputs.formattedTime}}-${{github.sha}} .
