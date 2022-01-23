@@ -37,6 +37,7 @@ jobs:
           utcOffset: "+09:00"
 
       - name: Generate deployment package
+        working-directory: ./server-app
         run: |
           mkdir -p deploy
           cp build/libs/*.jar deploy/todo-application-prod.jar
