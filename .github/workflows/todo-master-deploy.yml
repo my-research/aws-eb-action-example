@@ -21,19 +21,21 @@ jobs:
 
       - name: Grant execute permission for gradlew
         working-directory: ./server-app
-        run: chmod +x ./gradlew # (6)
+        run: chmod +x ./gradlew
         shell: bash
 
       - name: Build with Gradle
         working-directory: ./server-app
-        run: ./gradlew clean build # (7)
+        run: ./gradlew clean build
         shell: bash
+
       - name: Get current time
         uses: 1466587594/get-current-time@v2
         id: current-time
         with:
-          format: YYYY-MM-DDTHH-mm-ss # (1)
+          format: YYYYMMDDTHHmm
           utcOffset: "+09:00"
+
       - name: Deploy Consumer to EB
         uses: einaregilsson/beanstalk-deploy@v14
         with:
