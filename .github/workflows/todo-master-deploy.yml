@@ -24,6 +24,7 @@ jobs:
         shell: bash
 
       - name: print working-directory
+        working-directory: ./server-app
         run: ls -al
         shell: bash
 
