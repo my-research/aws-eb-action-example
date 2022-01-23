@@ -20,3 +20,11 @@
   - Spring Boot Application 을 생성한다.
   - Elastic Beanstalk 에서 Cloud Resource 를 관리한다.
   - 자동 배포를 위해 Github Action 을 설정한다.
+
+## 순서
+
+1. Application 서버 개발
+2. 코드 푸시
+3. EB 생성
+4. IAM 생성
+5. Github Action 생성
